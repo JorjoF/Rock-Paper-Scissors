@@ -1,5 +1,11 @@
-const test =" testing"
-const button = document.getElementById('button');
+const rButton = document.getElementById('Rock');
+const pButton = document.getElementById('Paper');
+const sButton = document.getElementById('Scissors');
+
+const rock = "✊";
+const paper = "✋";
+const scissors = "✌";
+
 const computer = computerPlay();
 var num = 0;
 const gameOutcomes = {
@@ -65,6 +71,13 @@ function playRound(player, computer, outcomes){
         }
     }
 }
+
+rButton.addEventListener('click', () => {
+    const computer = computerPlay()
+    document.getElementById('outcome').innerHTML = playRound("r", computer, gameOutcomes);
+    document.getElementById('player').innerHTML = rock
+    document.getElementById('computer').innerHTML = computer
+})
 
 button.addEventListener('click', () => {
     const computer = computerPlay();

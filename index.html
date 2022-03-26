@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css">
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-    <h1>Rock paper Scissors</h1>
-    <label for="playerAnswer">Player play:</label>
-    <input type="text" name="playerAnswer" id="player">
-    <button id = "button">Play</button>
-    <h2>VS</h2>
-    <p>Computer:</p>
-    <p id="computer">?</p>
-
-    <h3>Winner</h3>
-    <p id="outcome"></p>
+    <div class="title"><h1>Rock Paper Scissors</h1></div>
+    <div class="game">
+        <div class="icon" id="player">❔</div>
+        <div class="icon">🆚</div>
+        <div class="icon" id="computer" >❔</div>
+    </div>
+    <div class="buttons">
+        <button id="Rock" class="icon">✊</button>
+        <a href="" id="Paper">
+            <div class="icon">✋</div>
+        </a>
+        <a href="" id="Scissors">
+            <div class="icon">✌</div>
+        </a>
+    </div>
+    <div><p id="outcome"></p></div>
     <script src="/scripts/index.js" defer></script>
 </body>
 </html>
