@@ -1,3 +1,4 @@
+const test =" testing"
 const button = document.getElementById('button');
 const computer = computerPlay();
 var num = 0;
