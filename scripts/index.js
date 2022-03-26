@@ -1,4 +1,3 @@
-// var player = document.getElementById("player").value;
 const button = document.getElementById('button');
 const computer = computerPlay();
 var num = 0;
