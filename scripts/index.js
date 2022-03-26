@@ -1,6 +1,8 @@
 const rButton = document.getElementById('Rock');
 const pButton = document.getElementById('Paper');
 const sButton = document.getElementById('Scissors');
+const modal = document.querySelector("#modal");
+const closeModal = document.querySelector("#close-button");
 
 const rock = "✊";
 const paper = "✋";
@@ -72,17 +74,43 @@ function playRound(player, computer, outcomes){
     }
 }
 
+function computerToEmoji(computer){
+    switch(computer){
+        case "r":
+            return rock;
+            break;
+        case "p":
+            return paper;
+            break;
+        case "s":
+            return scissors;
+            break;
+    }
+}
+
 rButton.addEventListener('click', () => {
     const computer = computerPlay()
     document.getElementById('outcome').innerHTML = playRound("r", computer, gameOutcomes);
     document.getElementById('player').innerHTML = rock
-    document.getElementById('computer').innerHTML = computer
-})
+    document.getElementById('computer').innerHTML = computerToEmoji(computer)
+    modal.showModal();
 
-button.addEventListener('click', () => {
-    const computer = computerPlay();
-    const player = document.getElementById("player").value.charAt(0).toLowerCase();
-    document.getElementById('computer').innerHTML = computer;
-    document.getElementById('outcome').innerHTML = playRound(player, computer, gameOutcomes);
-    
-});
+})
+pButton.addEventListener('click', () => {
+    const computer = computerPlay()
+    document.getElementById('outcome').innerHTML = playRound("p", computer, gameOutcomes);
+    document.getElementById('player').innerHTML = paper
+    document.getElementById('computer').innerHTML = computerToEmoji(computer)
+    modal.showModal();
+})
+sButton.addEventListener('click', () => {
+    const computer = computerPlay()
+    document.getElementById('outcome').innerHTML = playRound("s", computer, gameOutcomes);
+    document.getElementById('player').innerHTML = scissors
+    document.getElementById('computer').innerHTML = computerToEmoji(computer)
+    modal.showModal();
+
+})
+closeModal.addEventListener('click', () => {
+    modal.close();
+})
