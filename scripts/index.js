@@ -48,7 +48,7 @@ function playRound(player, computer, outcomes){
                 document.querySelector("#computerScore").innerHTML = computerScore;
                 if(computerScore === 5){
                     reset();
-                    return "Computer as won the Game";
+                    return "Computer has won the Game";
                 }
                 return 'Computer wins this round';
             case 7: case 8: case 9:
@@ -56,7 +56,7 @@ function playRound(player, computer, outcomes){
                 document.querySelector("#playerScore").innerHTML = playerScore;
                 if(playerScore === 5){
                     reset();
-                    return "Player as won the Game";
+                    return "Player has won the Game";
                 }
                 return 'Player wins this round';
                 
