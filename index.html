@@ -19,14 +19,28 @@
         <button id="Paper" class="icon">✋</button>
         <button id="Scissors" class="icon">✌</button>
     </div>
-    <div class ="scoreBoard">
-        <p>Score: </p>
-        <p id="score">0</p>
+    <div class="title">
+        <h1>Score Board</h1>
     </div>
-    <dialog class="modal" id="modal">
+    <div class="scoreBoard">
+        <div class="player">
+            <div class="icon">🧑</div>
+            <h1 id="playerScore">0</h1>
+        </div>
+        <div class="computer">
+            <div class="icon">🤖</div>
+            <h1 id="computerScore">0</h1>
+        </div>
+    </div>
+    <dialog class="modal" id="roundWinner">
         <p id="outcome"></p>
         <button id="close-button" >Close</button>
     </dialog>
+    <dialog class="modal" id="gameWinner">
+        <p id="winner"></p>
+        <button id="close-button" >Close</button>
+    </dialog>
+    
     <script src="/scripts/index.js" defer></script>
 </body>
 </html>

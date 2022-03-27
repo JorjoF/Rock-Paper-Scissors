@@ -19,6 +19,15 @@ body{
 
 .scoreBoard{
     display: flex;
+    gap: 30px;
+}
+.player, .computer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scoreBoard .icon{
+    font-size: 36px;
 }
 
 a, a:hover, a:focus, a:active {

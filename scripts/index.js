@@ -1,15 +1,16 @@
 const rButton = document.getElementById('Rock');
 const pButton = document.getElementById('Paper');
 const sButton = document.getElementById('Scissors');
-const modal = document.querySelector("#modal");
+const roundWinner = document.querySelector("#roundWinner");
 const closeModal = document.querySelector("#close-button");
 
 const rock = "✊";
 const paper = "✋";
 const scissors = "✌";
 
-const computer = computerPlay();
-var num = 0;
+let playerScore = 0;
+let computerScore = 0;
+
 const gameOutcomes = {
     "rr" : 1,
     "pp" : 2,
@@ -28,13 +29,10 @@ function computerPlay() {
     switch(ran){
         case 0:
             return "p";
-            break;
         case 1:
             return "r";
-            break;
         case 2:
             return "s";
-            break;
     }
 }
 
@@ -43,33 +41,19 @@ function playRound(player, computer, outcomes){
     for(var k in outcomes){
         var v = outcomes[play];
         switch(v){
-            case 1:
+            case 1: case 2: case 3:
                 return "Tie";
-                break;
-            case 2:
-                return "Tie";
-                break;
-            case 3:
-                return "Tie";
-                break;
-            case 4:
+            case 4: case 5: case 6:
+                computerScore++;
+                document.querySelector("#computerScore").innerHTML = computerScore;
+                console.log(computerScore)
                 return "Computer Wins!!!!";
-                break;
-            case 5:
-                return "Computer Wins!!!!";
-                break;
-            case 6:
-                return "Computer Wins!!!!";
-                break;
-            case 7:
+            case 7: case 8: case 9:
+                playerScore++;
+                document.querySelector("#playerScore").innerHTML = playerScore;
+                console.log(playerScore)
                 return "Player Wins!!!!";
-                break;
-            case 8:
-                return "Player Wins!!!!";
-                break;
-            case 9:
-                return "Player Wins!!!!";
-                break;
+                
         }
     }
 }
@@ -93,7 +77,7 @@ rButton.addEventListener('click', () => {
     document.getElementById('outcome').innerHTML = playRound("r", computer, gameOutcomes);
     document.getElementById('player').innerHTML = rock
     document.getElementById('computer').innerHTML = computerToEmoji(computer)
-    modal.showModal();
+    roundWinner.showModal();
 
 })
 pButton.addEventListener('click', () => {
@@ -101,16 +85,16 @@ pButton.addEventListener('click', () => {
     document.getElementById('outcome').innerHTML = playRound("p", computer, gameOutcomes);
     document.getElementById('player').innerHTML = paper
     document.getElementById('computer').innerHTML = computerToEmoji(computer)
-    modal.showModal();
+    roundWinner.showModal();
 })
 sButton.addEventListener('click', () => {
     const computer = computerPlay()
     document.getElementById('outcome').innerHTML = playRound("s", computer, gameOutcomes);
     document.getElementById('player').innerHTML = scissors
     document.getElementById('computer').innerHTML = computerToEmoji(computer)
-    modal.showModal();
+    roundWinner.showModal();
 
 })
 closeModal.addEventListener('click', () => {
-    modal.close();
+    roundWinner.close();
 })
